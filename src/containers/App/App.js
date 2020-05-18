@@ -9,7 +9,7 @@ function App() {
       <Fragment>
           <Container>
               <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                  <Navbar.Brand href="#home">Tok Health</Navbar.Brand>
+                  <Navbar.Brand href="#home">React Starter</Navbar.Brand>
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                   <Navbar.Collapse id="responsive-navbar-nav">
                       <Nav className="mr-auto">
