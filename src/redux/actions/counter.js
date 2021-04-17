@@ -1,7 +1,25 @@
-import {INCREMENT, INCREMENT_REQUESTED, DECREMENT, DECREMENT_REQUESTED} from "../types";
+import {
+    INCREMENT, 
+    INCREMENT_REQUESTED, 
+    DECREMENT, 
+    DECREMENT_REQUESTED,
+    INCREMENT_BY_100
+} from "../types";
 
+export const incrementBy100 = (number) => {
+    return (dispatch)=> {
+        dispatch({
+            type: INCREMENT_REQUESTED
+        })
+
+        dispatch({
+            type: INCREMENT_BY_100,
+            payload: { number }
+        })
+    }
+}
 export const increment = () => {
-    return dispatch => {
+    return (dispatch)=> {
         dispatch({
             type: INCREMENT_REQUESTED
         })
@@ -13,7 +31,7 @@ export const increment = () => {
 }
 
 export const incrementAsync = () => {
-    return dispatch => {
+    return (dispatch) => {
         dispatch({
             type: INCREMENT_REQUESTED
         })

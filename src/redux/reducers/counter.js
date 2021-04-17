@@ -1,4 +1,4 @@
-import {INCREMENT_REQUESTED, INCREMENT, DECREMENT_REQUESTED, DECREMENT} from "../types";
+import {INCREMENT_REQUESTED, INCREMENT, DECREMENT_REQUESTED, DECREMENT, INCREMENT_BY_100} from "../types";
 
 const initialState = {
     count: 0,
@@ -6,7 +6,7 @@ const initialState = {
     isDecrementing: false
 }
 
-export default (state = initialState, action) => {
+const counter = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT_REQUESTED:
             return {
@@ -20,7 +20,12 @@ export default (state = initialState, action) => {
                 count: state.count + 1,
                 isIncrementing: !state.isIncrementing
             }
-
+        case INCREMENT_BY_100:
+            return {
+                ...state,
+                count: state.count + action.payload.number,
+                isIncrementing: !state.isIncrementing
+            }
         case DECREMENT_REQUESTED:
             return {
                 ...state,
@@ -39,3 +44,4 @@ export default (state = initialState, action) => {
     }
 }
 
+export default counter;
